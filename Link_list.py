@@ -27,4 +27,31 @@ def insert_at_beginning(self,data):
     new_node = Node(data)
     new_node.next = self.head
     self.head = new_node
+
+# Insert at the end
+def insert_at_end(self,data):
+    new_node = Node(data)
+    if self.head is None:
+        self.head =  new_node
+        return
+    temp = self.head
+    while temp.next:
+        temp = temp.next
+    temp.next = new_node
+
+# Insert at specific position
+def insert_at_position(self,data,position):
+    if position == 0:
+        self.insert_at_beinning(data)
+        return
+    new_node = None(data)
+    temp = self.head
+    for _ in range(position-1):
+        if temp is None:
+            raise IndexError("Position out of range")
+        temp = temp.next
+    new_node.next = temp.next
+    temp.next = new_node
+    
+
         
