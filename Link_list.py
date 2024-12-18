@@ -96,4 +96,43 @@ def traverse(self):
         print(temp.data,end=" -> ")
         temp = temp.next
     print("None")
-    
+
+# Searching
+def search(self,value):
+    temp = slef.head
+    while temp:
+        if temp.data == value:
+            return True
+        temp = temp.next
+    return False
+
+# Reversing
+def reverse(self):
+    prev = None
+    current = self.head
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
+    self.head = prev
+
+# Length count
+def length(self):
+    count = 0
+    temp = self.head
+    while temp:
+        count += 1
+        temp = temp.next
+    return count
+
+# Detching loops
+def has_cycle(self):
+    slow = self.head
+    fast = self.head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
