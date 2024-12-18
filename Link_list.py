@@ -52,6 +52,48 @@ def insert_at_position(self,data,position):
         temp = temp.next
     new_node.next = temp.next
     temp.next = new_node
-    
 
-        
+# Delete from Beginning
+def delete_from_beginning(self):
+    if self.head is None:
+        print("List is empty")
+        return
+    self.head = self.head.next
+    
+# Delete from end
+def delete_from_end(self):
+    if self.head is None:
+        print("List is empty")
+        return
+    if self.head.next is None:
+        self.head = None
+        return
+    temp = self.head 
+    while temp.next.next:
+        temp = temp.next
+    temp.next = None
+
+# Delete at specific value
+def delete_by_position(self,value):
+    if self.head is None:
+        print("List is empty")
+        return
+    if self.head.data == value:
+        self.head =self.head.next
+        return
+    temp = self.head
+    while temp.next and temp.next.data != value:
+        temp = temp.next
+    if temp.next is None:
+        print("Value not found")
+        return
+    temp.next = temp.next.next 
+
+# Traversal
+def traverse(self):
+    temp = self.head
+    while temp:
+        print(temp.data,end=" -> ")
+        temp = temp.next
+    print("None")
+    
