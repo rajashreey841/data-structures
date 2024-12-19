@@ -11,7 +11,7 @@ Queue Operation:
 # Implementation using a custom class
 
 class Queue:
-    def __init__(slef):
+    def __init__(self):
         self.queue = []
 
     # Enqueue
@@ -39,3 +39,13 @@ class Queue:
     # size
     def size(self):
         return len(self.queue)
+
+q = Queue()
+q.enqueue(7)
+q.enqueue(10)
+print("Queue after enqueue:", q.queue)  
+print("Front element:", q.peek())  
+q.dequeue()
+print("Queue after dequeue:", q.queue) 
+print("Is queue empty?", q.is_empty())  
+print("Size of queue:", q.size()) 
