@@ -49,3 +49,50 @@ q.dequeue()
 print("Queue after dequeue:", q.queue) 
 print("Is queue empty?", q.is_empty())  
 print("Size of queue:", q.size()) 
+
+
+# Implementation using Collection(Deque)
+from collections import deque
+
+# Create a queue
+queue = deque()
+
+# Enqueue
+queue.append(10)
+queue.append(20)
+
+# Dequeue
+queue.popleft()
+
+# Peek
+if queue:
+    print(queue[0])
+
+# Is Empty
+print(len(queue) == 0)
+
+# Size
+print(len(queue))
+
+# Implementation using the queue module
+from queue import Queue
+
+# Create a queue
+q = Queue()
+
+# Enqueue
+q.put(10)
+q.put(20)
+
+# Dequeue
+print(q.get())
+
+# Peek (not directly supported; use workaround)
+if not q.empty():
+    print(q.queue[0])
+
+# Is Empty
+print(q.empty())
+
+# Size
+print(q.qsize())
